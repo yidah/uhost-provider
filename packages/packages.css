@@ -1,102 +1,124 @@
 main {
-    padding-top:2rem;
-
+  padding-top: 2rem;
 }
 
-.background{
-    background:url("../images/plans-background.jpg") center/cover;
-    filter: grayscale(40%);
-    width: 100vw;
-    height:100vh;
-    position: fixed;
-    z-index: -1;
+.background {
+  background: url('../images/plans-background.jpg') center/cover;
+  filter: grayscale(40%);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
 }
 
- .package{
-    width: 80%;
-    margin:1rem 0;
-    border: 4px solid #0e4f1f;
-    border-left: none;
-    background-color: #95c78e;
-    position: relative; 
+.package {
+  width: 80%;
+  margin: 1rem 0;
+  border: 4px solid #0e4f1f;
+  border-left: none;
+  background-color: #95c78e;
+  position: relative;
 }
 
 .package:hover,
 .package:active {
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    border-color: #ff5454
-
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-color: #ff5454;
 }
 
-.package a{
-    text-decoration: none;
-    color:inherit;
-    /*make sure anchor takes full available width 
+.package a {
+  text-decoration: none;
+  color: inherit;
+  /*make sure anchor takes full available width 
     of the surrounding section*/
-    display: block; 
-    padding: 2rem;
+  display: block;
+  padding: 2rem;
 }
 
-.package__title{
-    margin: 16px;
+.package__title {
+  margin: 16px;
 }
 
-.package__badge{
-    position: absolute;
-    top:0;
-    right:0;
-    margin: 1.2rem;
-    font-size: 0.8rem;
-    color: white;
-    background: #ff5454;
-    padding: 0.5rem;
+.package__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1.2rem;
+  font-size: 0.8rem;
+  color: white;
+  background: #ff5454;
+  padding: 0.5rem;
 }
 
-.package__subtitle{
-    color:#979797;
-    margin: 16px;
+.package__subtitle {
+  color: #979797;
+  margin: 16px;
 }
 
-.package__info{
-    padding:1rem;
-    border:1px solid #0e4f1f;
-    font-size: 1.2rem;
-    color: #0e4f1f;
-    background:white;
+.package__info {
+  padding: 1rem;
+  border: 1px solid #0e4f1f;
+  font-size: 1.2rem;
+  color: #0e4f1f;
+  background: white;
 }
 
-.clearfix{
-    /*any elements coming after an element with 
+.clearfix {
+  /*any elements coming after an element with 
     .clearfix class will not respect previous floats  */
-    clear: both;
+  clear: both;
 }
 
-#plus{
-    background: rgba(213,255,220,0.95);
+#plus {
+  background: rgba(213, 255, 220, 0.95);
 }
 
-#free{
-    background: rgba(234,252,237,0.95);
-    float: right;
-    border-right:none;
-    border-left: 4px solid #0e4f1f;
-    text-align: right;
+#free {
+  background: rgba(234, 252, 237, 0.95);
+  float: right;
+  border-right: none;
+  border-left: 4px solid #0e4f1f;
+  text-align: right;
 }
 
 #free:hover,
-#free:hover{
-    border-left-color: #ff5454;
+#free:hover {
+  border-left-color: #ff5454;
 }
 
-#premium{
-    background: rgba(14,79,31,0.95);
+#premium {
+  background: rgba(14, 79, 31, 0.95);
 }
 
-#premium .package__title{
-    color: white;
+#premium .package__title {
+  color: white;
 }
 
-#premium .package__subtitle{
-    color: #bbb;
+#premium .package__subtitle {
+  color: #bbb;
 }
 
+/* Equals or larger than 40rem (640px) width */
+@media (min-width: 40rem) {
+  main {
+    max-width: 92rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Equals or larger than 40rem (640px) width */
+@media (min-width: 92rem) {
+  .package {
+    border-left: 4px solid #0e4f1f;
+  }
+
+  #free {
+    border-right: 4px solid #0e4f1f;
+  }
+
+  #free:hover,
+  #free:hover {
+    border-right-color: #ff5454;
+  }
+}

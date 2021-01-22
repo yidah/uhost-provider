@@ -5,7 +5,6 @@
   /* background-image: radial-gradient( circle at 20% 50%, red, blue, green); */
   width: 100vw;
   height: 33vh;
-  margin-top: 2.75rem;
   position: relative;
 }
 
@@ -17,8 +16,9 @@
   left: 3%;
   font-size: 1.6rem;
 }
-/* Equals or larger 40rem (640px)*/
-@media (min-width: 40rem) {
+/* Equals or larger than 40rem (640px) width and equals or larger than 60rem(960px) height
+   instead of 60 we decrease for laptops to 40rem too*/
+@media (min-width: 40rem) and (min-height:40rem) {
   #product-overview {
     height: 40vh;
     background-position: 50% 25%;
@@ -83,7 +83,7 @@
 }
 
 /* Equals or larger 40rem (640px)*/
-@media (min-width: 40rem) {
+@media (min-width: 40rem)  {
   .plan_list {
     width: 100%;
     text-align: center;
@@ -118,12 +118,6 @@
   text-align: center;
 }
 
-.key-feature {
-  display: inline-block;
-  width: 33%; /*instead of 30 because the space behaviour */
-  vertical-align: top;
-}
-
 .key-feature__image {
   background: #ffcdde;
   /*need square to work with radius and get a perfect circle*/
@@ -142,6 +136,16 @@
   font-weight: bold;
   color: white;
   font-size: 1.2rem;
+}
+
+/* Equals or larger 40rem (640px)*/
+@media (min-width: 40rem) {
+  .key-feature {
+    display: inline-block;
+    width: 33%;
+    max-width:25rem;
+    vertical-align: top;
+  }
 }
 
 /* h1 {
