@@ -38,12 +38,10 @@ main{
   position: fixed;
   top:0;
   left: 0;
-  z-index:1;
-}
-
-.main-header > div {
-  display: inline-block;
-  vertical-align: middle;
+  z-index:60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .toggle-button {
@@ -72,13 +70,11 @@ main{
   color: #0e4f1f;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
-  height:2.5rem;
-  vertical-align: middle;
 }
 
 .main-header__brand img{
-  height:100%;
+  height:2.5rem;
+  vertical-align: middle;
 }
 
 .main-nav {
@@ -90,12 +86,10 @@ main{
   margin: 0;
   padding: 0; /*this remove bullets same as list-style:none just making sure*/
   list-style: none;
+  display: flex;
 }
 
 .main-nav__item {
-  display: inline-block;
-  /*margin is not included in the calculation for the width due to the 
-      box-sizing: border-box;vthe links stay in the same line despite margin*/
   margin: 0 1rem;
 }
 
@@ -136,14 +130,7 @@ main{
     display: none;
   }
   .main-nav {
-    /* display inline but we cannot add width 100% as we have changed the behaviour to inline with this property 
-        so nav only takes the space it needs to accomodate its content so text-align: rigth;  does not work in this case
-        therefore we need to assign a width that is, the total width - the div (uHost) width */
-    display: inline-block;
-    text-align: right;
-    /*Although the div width is 48.141 we added 53 a the enter between div and nav adds width the hack is to add more width to compensate*/
-    width: calc(100% - 44px); /*taking into account font size and weight */
-    vertical-align: middle;
+    display: flex;
   }
 }
 
@@ -157,12 +144,14 @@ main{
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-footer__link {
-  display: block;
-  margin:1rem 0;
+  margin:0.5rem 0;
 }
 
 .main-footer__link a {
@@ -177,6 +166,11 @@ main{
 
 /* Equals or larger 40rem (640px)*/
 @media (min-width: 40rem) {
+  .main-footer__links {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   .main-footer__link {
     display: inline-block;
     margin: 0 1rem;
@@ -198,9 +192,13 @@ main{
   width: 90%;
   height: 100%;
   list-style: none;
-  margin: 10% auto;
+  margin: 0 auto;
   padding: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobile-nav__item {
