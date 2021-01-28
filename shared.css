@@ -6,16 +6,28 @@
   box-sizing: border-box;
 }
 
+html{
+  height: 100%;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
+  display: grid;
+  /* grid-template-rows: 3.5rem auto 8rem; */
+  /*A grid column/row with fit-content set will still take up as little space as necessary, 
+    according to its content, but no more than the maximum value (8rem) 
+    3.5rem; RESERVING THE PLACE OF THE HEADER WITH AN EXTRA ROW*/
+  grid-template-rows: 3.5rem auto fit-content(8rem); 
+  grid-template-areas: "header"
+                       "main"
+                       "footer";
+  height: 100%;
 }
 
 main{
-  /* calculation to make sure footer is always at the bottom  
-  100% view port - 3.5rem (navigation bar) - (footer height 19px with padding top bottom (32px) and margin top (48px) = 131px (8rem)*/
-  min-height: calc(100vh - 3.5rem - 8rem);
-  margin-top:3.5rem; /*2.5rem height of the icon + 2 * 0.5rem padding for ther navbar=3.5rem total navbar height*/
+  /* grid-row:2 / 3; */
+  grid-area: main;
 }
 
 .backdrop{
@@ -138,6 +150,8 @@ main{
   background-color: black;
   padding: 2rem;
   margin-top: 3rem;
+  /* grid-row:3 / 4; */
+  grid-area: footer;
 }
 
 .main-footer__links {
