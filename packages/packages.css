@@ -18,6 +18,9 @@ main {
   border-left: none;
   background-color: #95c78e;
   position: relative;
+  /* overflow: hidden - will make sure that any elements 
+  beyond the package boundaries will be cropped */
+  overflow: hidden;
 }
 
 .package:hover,
@@ -48,6 +51,13 @@ main {
   color: white;
   background: #ff5454;
   padding: 0.5rem;
+  transform: rotateZ(45deg) translateX(3.5rem) translateY(-1.5rem);
+  transform-origin: center;
+  width: 12rem;
+  text-align: center;
+  /* transform-origin: 1rem 1rem;
+  transform-origin: 50% 50%;
+  transform-origin: 25% 50%; */
 }
 
 .package__subtitle {

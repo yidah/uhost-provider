@@ -12,18 +12,21 @@
   }
 
   .testimonial__image-container{
-      width: 100%;
+      width: 60%;
       max-width: 40rem;
       box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
+      /* skewX - pulls left(+) or right(-)
+         skewY - pull top(+) or bottom (-)  */
+      /* transform: skewX(20deg) skewY(-20deg); */
+      /* transform: skew(20deg, -20deg); */
+      transform: skew(20deg);
+      overflow: hidden;
   }
 
   .testimonial__image{
       width: 100%;
-      /*get rid of the white horizontal line below the image
-       it needs to be aligned vertically too 
-       display:block will also work*/
       vertical-align: top;
-
+      transform: skew(-20deg) scale(1.5);
   }
   
   .testimonial__info {
