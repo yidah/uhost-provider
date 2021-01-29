@@ -12,7 +12,12 @@ for (var i = 0; i < planButtons.length; i++) {
 
     // modal.className = 'open'; // this will overwrite class list
     modal.classList.add('open');
-    backgrop.classList.add('open');
+
+    // tackling transition issue with display:none
+    backgrop.style.display = 'block';
+    setTimeout(function () {
+      backgrop.classList.add('open');
+    }, 10);
   });
 }
 
@@ -33,12 +38,22 @@ function closeModal() {
   if (modalNo) {
     modal.classList.remove('open');
   }
+
+  // tackling transition issue with display:none
   backgrop.classList.remove('open');
+  setTimeout(function () {
+    backgrop.style.display = 'none';
+  },200); /* has to match transition time to close at the same time transition:opacity 0.2s linear;*/
 }
 
 toggleButton.addEventListener('click', function () {
   // mobileNav.style.display = 'block';
   // backgrop.style.display='block';
   mobileNav.classList.add('open');
-  backgrop.classList.add('open');
+
+  // tackling transition issue with display:none
+  backgrop.style.display = 'block';
+  setTimeout(function () {
+    backgrop.classList.add('open');
+  }, 10);
 });

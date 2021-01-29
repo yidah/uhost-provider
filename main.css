@@ -165,7 +165,12 @@
 
 .modal {
   position: fixed;
-  display: none;
+  /* display: none; */
+  /* opacity: keeps element as part of the flow 
+     and we can watch with the transition */
+  opacity: 0;
+  transform:translateY(-3rem);
+  transition:opacity 200ms ease-out 1s, transform 500ms ease-out 1s;
   z-index: 200;
   top: 20%;
   left: 30%;
